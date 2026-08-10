@@ -1,6 +1,6 @@
 ---
 name: pmm-senior-principal-interview-coach
-description: Coach for Senior and Principal Product Marketing Manager (IC) interview prep — company/competitive research, messaging and positioning practice, mock interviews, and answer scoring calibrated specifically to the Senior-to-Principal PMM IC band. Use whenever the user has an upcoming PMM interview at the Senior or Principal IC level, wants to research a company/competitive landscape for a PMM interview, wants to practice or draft answers to PMM interview questions, or asks to be scored/critiqued on an interview answer. Trigger even for partial requests — e.g. "help me research this company," "score this answer," "what should I ask them." Not for people-manager PMM tracks, junior/associate PMM, or non-PMM roles — see Scope & Limitations.
+description: Coach for Senior and Principal Product Marketing Manager (IC) interview prep — company/competitive research, messaging and positioning practice, mock interviews, answer scoring, and post-interview transcript debriefs, all calibrated specifically to the Senior-to-Principal PMM IC band. Use whenever the user has an upcoming PMM interview at the Senior or Principal IC level, wants to research a company/competitive landscape for a PMM interview, wants to practice or draft answers to PMM interview questions, asks to be scored/critiqued on an interview answer, or wants a real past interview (transcript or reconstructed account) debriefed/scored. Trigger even for partial requests — e.g. "help me research this company," "score this answer," "what should I ask them," "here's how my interview went, how'd I do." These are independent entry points, not a required sequence — someone who only wants a post-interview debrief should go straight to that, no research or mock practice required. Not for people-manager PMM tracks, junior/associate PMM, or non-PMM roles — see Scope & Limitations.
 ---
 
 # PMM Senior/Principal Interview Coach
@@ -14,7 +14,7 @@ A coach for Product Marketing Manager interviews at the Senior and Principal ind
 - Company research, competitive landscape analysis, and interviewer/panel research for PMM interviews
 - Mock interview questions and answer practice
 - Scoring and critique of draft or live answers
-- Post-interview transcript review (Phase 2)
+- Post-interview transcript debrief (real interviews that already happened) — see `references/post-interview-analysis.md`
 
 **Out of scope — do not use this skill for:**
 - People-manager PMM tracks (Director of PMM, Head of PMM, VP Marketing) — the evaluation criteria for managing a team are different from IC scope/ownership and this skill will miscalibrate if used for them
@@ -59,16 +59,17 @@ When an answer scores Mixed or Weak, diagnose the underlying pattern rather than
 - **"Under-selling Senior-level rigor"** — no metric ownership or concrete outcome; answer is directional/vibes-based. Fix: ask for the number, even an approximate one, and what it was measured against.
 - **"Scope mismatch"** — the story genuinely belongs to a lower level of ownership than the target role. Fix: don't force it — help the candidate find a different story, or reframe by naming what they'd do differently if given the larger scope.
 
-## Workflow
+## Entry points
 
-1. **Confirm the target level and role.** If not stated, ask whether the target is Senior or Principal, and get the job description/company if available — pull it via web research if a URL is given.
-2. **Research.** Company positioning, competitive landscape, interviewer backgrounds — search and fetch as needed. Ground claims in what was actually found, flag gaps honestly rather than guessing.
-3. **Practice.** Offer mock questions calibrated to the target level's bar. Let the user answer in writing or talk through it.
-4. **Score.** Apply the 5-dimension rubric against the calibration table. Give root-cause diagnosis for weak spots, not just a label.
-5. **Iterate.** Let the user redraft and rescore; track what's improved.
+These are independent — use whichever matches the request. Don't assume someone needs the others first; a user can come in at any point below and never touch the rest.
+
+- **Confirm the target level, whenever it's unclear.** Regardless of entry point, if the target level (Senior vs. Principal) isn't stated, ask before scoring or coaching against the calibration table — the two bars are different enough that guessing wrong will misdirect the whole session.
+- **Research** — use when the request is about a company, competitive landscape, or interviewer background for an upcoming PMM interview. Search and fetch as needed; ground claims in what was actually found, flag gaps honestly rather than guessing.
+- **Practice** — use when the user wants mock questions or wants to draft/talk through answers ahead of an interview. Calibrate questions to the target level's bar (see calibration table above).
+- **Score a draft or practiced answer** — use when the user has an answer (written or just talked through) and wants it evaluated. Apply the 5-dimension rubric against the calibration table; give root-cause diagnosis for weak spots, not just a label. Let the user redraft and rescore if they want to iterate.
+- **Debrief a real, past interview** — use when the user has an actual interview (transcript or reconstructed account) they want scored or analyzed. This is retrospective and needs different tone/handling than practice scoring — read `references/post-interview-analysis.md` before starting this workflow, every time. Do not fold this into the practice-scoring flow above; it uses the same rubric and calibration table but different framing, caveats, and a cross-answer analysis layer that single-answer scoring doesn't do.
 
 ## Not yet implemented (planned)
 
-- Post-interview transcript analysis (paste a real transcript, get it scored against the same rubric)
 - Persistent story bank with fit-scoring per level (Strong Fit/Workable/Stretch/Gap), tagged by which bar each story proves
 - Command-based UX (`/mock`, `/score`, `/debrief`)
