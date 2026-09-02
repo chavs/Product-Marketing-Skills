@@ -31,7 +31,7 @@ The candidate does the actual "this means X for the business" translation.
 
 ## Phase B — Autonomous research batch (Steps 2–6)
 
-Runs in one uninterrupted pass once Phase A and Step 1 are done — no further back-and-forth with the candidate until this phase is complete. **Write the findings to a single document, not inline chat** — this phase produces enough material to crowd out a live chat UI during a time-pressured exercise. Stop at the time-allocation budget stated above and hand off to Phase C, even if research feels incomplete — note any gaps honestly in the document rather than continuing past budget.
+Runs in one uninterrupted pass once Phase A and Step 1 are done — no further back-and-forth with the candidate until this phase is complete. **Write the findings to a single local markdown file (not a Google Doc or other remote document, and not inline chat)** — a local file write has no network round-trip, so it stays fast and reliable under live time pressure even in a session where a remote-document connector isn't available. Use a clear filename (e.g. `value-proposition-test-notes.md`) in the current working directory, or ask the candidate where if that's genuinely ambiguous. Stop at the time-allocation budget stated above and hand off to Phase C, even if research feels incomplete — note any gaps honestly in the document rather than continuing past budget.
 
 ### Step 2 — Prior state: how personas solved this before
 
@@ -68,7 +68,7 @@ Draft four components, informed by the Phase B document:
 3. A headline
 4. **Your own list of areas to be careful not to overstep, and areas that would require further go-to-market validation before you'd state them confidently to a real customer.** This is your own proactive judgment call, produced here — not something Claude asks you for later.
 
-Claude does not write any of this. Write all four components into the same document Phase B produced, **at the top** — above the research, not after it. When defending this live, the candidate needs their own answer first and the research as backup reference after, not research notes to scroll past before reaching what they're actually going to say.
+Claude does not write any of this. Write all four components into the same local markdown file Phase B produced, **at the top** — above the research, not after it. When defending this live, the candidate needs their own answer first and the research as backup reference after, not research notes to scroll past before reaching what they're actually going to say.
 
 If it's unclear which section or persona a sentence in the draft maps to, ask before filing or critiquing it — never guess at the structural mapping.
 
