@@ -9,7 +9,7 @@ Both are first-class. Don't treat one as the "real" use case and the other as in
 
 ## Scope
 
-This isn't tied to a single vendor. It covers whichever is relevant to the moment: how a *target company's own* customers talk about their experience, how a *competitor's* customers talk about theirs, or — just as often, especially for language calibration during something like the product-to-value translation test — how a persona talks about the *problem itself*, independent of which vendor they ended up with. Use whichever framing the question actually calls for; don't force every lookup into a single-vendor shape.
+This isn't tied to a single vendor. It covers whichever is relevant to the moment: how a *target company's own* customers talk about their experience, how a *competitor's* customers talk about theirs, or — just as often, especially for language calibration during something like the Value Proposition Test — how a persona talks about the *problem itself*, independent of which vendor they ended up with. Use whichever framing the question actually calls for; don't force every lookup into a single-vendor shape.
 
 ## Source-trust ranking
 
