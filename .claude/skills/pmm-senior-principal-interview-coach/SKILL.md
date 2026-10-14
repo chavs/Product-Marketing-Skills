@@ -33,6 +33,7 @@ Tone applies uniformly across Practice and Debrief modes. In Debrief mode specif
 - Senior PMM and Principal PMM, individual contributor track only
 - Company research, competitive landscape analysis, and interviewer/panel research for PMM interviews
 - Mock interview questions and answer practice
+- A timed, spoken, answer-first drill (see `References/answer-first-drill.md`)
 - Scoring and critique of draft or live answers
 - Post-interview transcript debrief (real interviews that already happened) — see `references/post-interview-analysis.md`
 
@@ -70,6 +71,8 @@ Score draft or practiced answers on these 5 dimensions, each assessed against th
 
 Give a rating per dimension (Strong / Mixed / Weak) plus one sentence of "what to fix" per Mixed or Weak rating — not just that something's off, but what specifically to change.
 
+**Format check (shown before the 5 dimensions, every time).** Past feedback (a rejection, an interviewer's note and two mock scores) marked format down while content was fine, so format is scored separately and first. (1) Quote the first sentence and say whether it states the answer. (2) Say where the strongest point sits and whether a caveat comes before it. (3) Count the words against any target. (4) Count and quote hedges and fillers. Details are in `References/answer-first-drill.md`. Show this check for Practice, Score and Drill results. In Debrief mode, apply it to the user's answers in the transcript. The Structure dimension still covers how the answer is organized. The Format check covers answer-first and concision.
+
 ## Root-cause diagnosis
 
 When an answer scores Mixed or Weak, diagnose the underlying pattern rather than just flagging the symptom. Common patterns specific to this band:
@@ -90,6 +93,7 @@ These are independent — use whichever matches the request. Don't assume someon
 - **Debrief a real, past interview** — use when the user has an actual interview (transcript or reconstructed account) they want scored or analyzed. This is retrospective and needs different tone/handling than practice scoring — read `references/post-interview-analysis.md` before starting this workflow, every time. Do not fold this into the practice-scoring flow above; it uses the same rubric and calibration table but different framing, caveats, and a cross-answer analysis layer that single-answer scoring doesn't do.
 - **Build or draw from a story bank** — use when the user wants to build up a reusable set of real, pre-scored stories, or wants help finding which of their stories fits a specific upcoming interview. Read `references/story-bank.md` before starting this workflow. Elicit stories interactively (draw them out through questions) rather than handing over a blank template — this is generative, tone closer to Practice mode than Debrief mode.
 - **Summarize the bank** — use when the user wants a compact overview of their existing story bank (e.g. "show me my stories as a table," "where does my bank stand"), rather than help drafting a new story. Output as a table (Story Title, Description, Level/Fit, Status), not prose — see the output-format section in `references/story-bank.md`. Don't run the interactive elicitation flow for this; only summarize what's already been drafted and scored.
+- **Drill** — use when the user wants timed, spoken, answer-first practice. Read `References/answer-first-drill.md` before starting, every time. This is separate from Practice: Practice is open-ended question work, Drill is one question at a time against a clock with the Format check first.
 
 ## Commands
 
@@ -99,6 +103,7 @@ Commands are shortcuts into the entry points above — not a separate system. A 
 |---|---|---|
 | `/research [company or role]` | Research entry point | If no argument given, ask what to research |
 | `/practice [topic or question type]` | Practice entry point | If no argument, offer a mock question calibrated to the confirmed target level |
+| `/drill [seconds] [question type]` | Drill entry point | Reads `References/answer-first-drill.md` before responding. Default is 90 seconds. The level and tone checks still apply |
 | `/score` | Score-a-draft-answer entry point | Expect the answer to follow, either same message or next message |
 | `/debrief` | Post-interview debrief entry point | Read `references/post-interview-analysis.md` before responding, same as the natural-language trigger. Expect a transcript/account to follow. |
 | `/bank add` | Story bank — interactive elicitation | Starts the elicitation flow from `references/story-bank.md` |
