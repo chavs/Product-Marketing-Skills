@@ -16,7 +16,7 @@ A Claude skill for use *during* an actual live PMM interview — not for prep be
 
 ## Usage
 
-Trigger this skill when the user is currently in an interview and needs a fast fact, or is currently working through the Value Proposition Test brief. Natural language works ("they just asked about Competitor X's pricing") or use `/competitive-intel [question]`, `/customer-voice [question]`, and `/value-proposition-test` directly.
+Trigger this skill when the user is currently in an interview and needs a fast fact, or is currently working through the Value Proposition Test brief. Natural language works ("they just asked about Competitor X's pricing") or use `/competitive-intel [question]`, `/customer-voice [question]`, and `/value-proposition-test` directly. In Claude Code these are real slash commands. The research file and notes are saved to `~/Documents/interview-prep/<company-slug>/`.
 
 ## Files
 
