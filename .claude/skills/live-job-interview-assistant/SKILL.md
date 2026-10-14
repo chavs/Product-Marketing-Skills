@@ -39,7 +39,7 @@ A single request may need both research entry points at once (e.g. "what do thei
 
 ## Commands
 
-Shortcuts into the entry points above — not a separate system. Natural-language requests work the same way.
+Shortcuts into the entry points above — not a separate system. Natural-language requests work the same way. In Claude Code these are real slash commands (see `.claude/commands/`).
 
 | Command | Routes to | Notes |
 |---|---|---|
