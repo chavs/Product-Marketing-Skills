@@ -27,19 +27,22 @@ Same rule as the Value Proposition Test in `live-job-interview-assistant`, for t
 
 Ask these together, in one message — never scattered across turns, and never asking the candidate to restate something the brief itself already answers:
 
-1. **The brief itself** — if not already shared this session, ask for it (file or pasted text). Read it fully before asking anything else below.
+1. **The brief itself** — if not already shared this session, ask for it (file or pasted text). Read it fully before asking anything else below. Then extract from it, and never ask the candidate to restate: the task list broken into sub-asks, any stated or implied grading criteria (label implied ones as implied), the deliverable medium, and any length limit with its unit (words, pages or slides).
 2. **Deadline / runway** — how much time exists before the candidate needs to start drafting, so research can actually finish before it's needed.
 3. **Task priority** — treat all tasks in the brief as equal priority, or weight research time toward one.
-4. **Output format/length** — any constraint on the final write-up (doc-style markdown, slides, a length cap).
+4. **Output format and voice** — only what the brief does not already say: the format of the final write-up (doc-style markdown, slides) and, if the deliverable is writing in a particular voice, which voice and medium it should match.
 5. **Existing point of view** — does the candidate already have notes or a leaning on any task that research should build on rather than contradict blind.
+6. **AI-use note** — does the company ask how AI was used? Ask only if the brief is silent.
 
 **Freshness check, every time a brief is shared**: if the candidate has shared a version of this brief before in this session (or references having done so), and now shares a new one, treat the newest as authoritative — don't merge or average the two. Explicitly diff and flag what changed (report names/editions, scores, named pages, task wording) rather than silently carrying forward a stale fact from the earlier version. A stale fact here (wrong analyst report, wrong competitive position, wrong page list) sends every downstream research track in the wrong direction.
 
-**Confirm back in one synthesized recap** before starting Phase B — not a re-ask, a restatement of what was understood, including the task list as read from the brief.
+**Propose a source order for this brief** (for example: the company's own docs and the analyst report itself first, then practitioner content, then review sites; Reddit and Hacker News excluded). The candidate confirms it in the recap below, so the hierarchy is agreed before any research starts.
+
+**Confirm back in one synthesized recap** before starting Phase B — not a re-ask, a restatement of what was understood. Include: the task list with sub-asks, the grading criteria as read, the proposed source order, the medium, voice and length limit with unit, and whether an AI-use note is needed.
 
 ## Phase B — Autonomous background research (one track per task, plus a foundational baseline)
 
-Once Phase A is confirmed, this runs unattended — no further back-and-forth needed until a track finishes or hits a genuine blocker. Launch each track as an independent background research agent (Claude Code's background `Agent` tool), so tracks run in parallel rather than one after another; this is what makes an overnight, unattended run realistic. All tracks write into **one shared local markdown file** (not a Google Doc, not inline chat — same rationale as the Value Proposition Test: no network round-trip, and a single file gives the candidate one place to read from in the morning). Name it clearly, e.g. `<company-slug>-case-study-research.md`, in the current working directory, with one clearly-headed section per track so parallel writes don't collide or interleave.
+Once Phase A is confirmed, this runs unattended — no further back-and-forth needed until a track finishes or hits a genuine blocker. Launch each track as an independent background research agent (Claude Code's background `Agent` tool), so tracks run in parallel rather than one after another; this is what makes an overnight, unattended run realistic. All tracks write into **one shared local markdown file** (not a Google Doc, not inline chat — same rationale as the Value Proposition Test: no network round-trip, and a single file gives the candidate one place to read from in the morning). Name it clearly, e.g. `<company-slug>-case-study-research.md`, and save it in `~/Documents/interview-prep/<company-slug>/` (outside the repo, because worktrees get recycled and untracked files in them are lost). Tell the candidate the full path. Give it one clearly-headed section per track so parallel writes don't collide or interleave.
 
 - **Track 0 — Value proposition, positioning & messaging baseline (foundational, always run first/alongside the others).** Read `References/value-prop-positioning-baseline.md`. Establishes what the target company itself currently says — across *all* the capability/use-case areas the brief touches, not just the newest one — before any competitive or critique work happens. Tasks 1–3 below all depend on this being accurate: a roadmap pick should be checked against it, differentiation only means something relative to it, and content critique needs to know the intended message before judging whether a page delivers it.
 - **One track per task actually named in the brief.** Read the brief to determine how many distinct tasks there are and what each is really asking — don't assume exactly three or force a task into a pattern it doesn't match. The common patterns this skill has reference files for:
@@ -50,25 +53,37 @@ Once Phase A is confirmed, this runs unattended — no further back-and-forth ne
   If a brief's task doesn't match any of these patterns, adapt the general sourcing/tagging discipline below rather than forcing it into the wrong reference file.
 - **If the candidate stated an existing working hypothesis in Phase A, always run a dedicated hypothesis-stress-test track alongside the others** — read `References/hypothesis-stress-testing.md`. Don't rely on the regular research tracks to surface disconfirming evidence incidentally; a track built to research a claim structurally tends to find material that supports it. This track's job is the opposite: actively try to break each plank of the hypothesis, and report both sides, not just whichever surfaced first.
 - **For a competitive/user-roadmap task specifically, also run a competitive-response-simulation pass** — read `References/competitive-response-simulation.md`. Beyond "what differentiates each competitor," this surfaces how each named competitor would likely push back on the target company's own stated position, grounded in the competitor's real public material (never fabricated quotes).
+- **If the deliverable is writing in a particular voice** (a blog post, an email, a LinkedIn post, a one-pager), also run a voice-calibration track. Read `References/voice-calibration.md`. It pulls real samples from the same medium as the deliverable and measures them. The candidate writes the piece.
 
-**Sourcing discipline, every track, no exceptions**: tag every claim `[Confirmed]` / `[Estimated]` / `[Inferred]`, with a short inline source link. Reddit and Hacker News are excluded entirely, consistent with the rest of this repo. Since this runs unattended and untimed, there's no search-pass cap the way the live skill has — thoroughness is the point — but a track should still state gaps honestly ("couldn't verify X, here's what was checked") rather than stretching a weak match to fill a slot.
+**Sourcing discipline, every track, no exceptions**: tag every claim `[Confirmed]` / `[Estimated]` / `[Inferred]`, with a short inline source link. Reddit and Hacker News are excluded entirely, consistent with the rest of this repo. Since this runs unattended and untimed, there's no search-pass cap the way the live skill has — thoroughness is the point — but a track should still state gaps honestly ("couldn't verify X, here's what was checked") rather than stretching a weak match to fill a slot. Every track also ends with a **Coverage** block: what was read in full, what was only skimmed, and what could not be reached. Never present a sample as a full sweep. List anything the candidate needs to upload under **Needs upload**, and say so at the first failed fetch, not after several attempts.
 
 ## Phase C — The candidate's draft (unassisted)
 
 Once research is reviewed, the candidate drafts their actual answers. Same document pattern as the Value Proposition Test: **the candidate's own draft goes at the top of the shared markdown file, above the research** — inverted from creation order, so it's the first thing visible and the research reads as backing reference underneath, not something to scroll past.
 
-## Phase D — Optional critique loop
+## Phase D — Optional critique loop (critique only)
 
-Once a draft exists, shift to editor. Adapt the critique to what each task actually is:
-- For a **roadmap task**: check the recommendation's claims against Track 0/the relevant research track's findings — does it overstate a gap, ignore one, or recommend something the research shows is already shipped? Is the "how would you advocate for this internally" answer (when a brief asks it) grounded in real evidence framing rather than generic PMM-speak?
-- For a **content-review task**: check the candidate's feedback against `References/content-teardown-research.md`'s pulled copy and Track 0's positioning baseline — did they catch a real inconsistency the research surfaced, or miss one?
+Once a draft exists, shift to editor. Read `References/submission-checks.md` first. Run these six checks in this order. Flag problems and ask questions. Never rewrite the candidate's text.
+
+1. **Claims against research, per task.** Adapt the check to what each task actually is:
+   - For a **roadmap task**: check the recommendation's claims against Track 0/the relevant research track's findings — does it overstate a gap, ignore one, or recommend something the research shows is already shipped? Is the "how would you advocate for this internally" answer (when a brief asks it) grounded in real evidence framing rather than generic PMM-speak?
+   - For a **content-review task**: check the candidate's feedback against `References/content-teardown-research.md`'s pulled copy and Track 0's positioning baseline — did they catch a real inconsistency the research surfaced, or miss one?
+
+2. **Grading-criteria coverage.** A table of each criterion from the Phase A recap, where the draft addresses it, and any gap.
+3. **Cross-section consistency.** Terms, numbers and recommendations should agree across all tasks.
+4. **Length.** Count words, pages or slides per section and in total with a script, not by eye. Compare with the limit from the recap. Flag cut candidates. Do not write the cuts.
+5. **Plain-writing flags.** List where the draft uses em dashes, sentences over about 25 words, or flourish. List locations only.
+6. **Submission notes.** If the company asks how AI was used, draft a short factual note from what happened in this session. The candidate confirms or edits it.
 
 If Senior/Principal-level rubric scoring of the write-up itself is wanted (substance, structure, credibility, differentiation), hand off to `pmm-senior-principal-interview-coach`'s Score entry point rather than reimplementing that rubric here.
 
 ## Commands
 
+In Claude Code these are real slash commands (see `.claude/commands/`).
+
 | Command | Routes to | Notes |
 |---|---|---|
 | `/case-study [company]` | Phase A intake | If no brief has been shared yet, ask for it before anything else |
+| `/case-study check` | Phase D critique loop | Expect the draft in the same message, the next message, or at the top of the research file |
 
 Natural-language requests work the same way — e.g. "I have a take-home case study from [company], can you help me research it overnight" triggers the same Phase A intake.
