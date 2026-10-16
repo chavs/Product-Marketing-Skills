@@ -4,4 +4,6 @@ This repo holds three skills for PMM interview prep: `pmm-senior-principal-inter
 
 Generated research, guides, notes and drill logs go in `~/Documents/interview-prep/<company-slug>/`, outside the repo. Worktrees get recycled and untracked files in them are lost.
 
+At the start of each session, read `status.md` at the repo root. It is the handoff from the last session.
+
 @interview-working-rules.md
